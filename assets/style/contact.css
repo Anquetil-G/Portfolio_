@@ -1,0 +1,98 @@
+#contact {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+}
+#contact .contacts {
+	text-align: center;
+	margin-bottom: 20px;
+}
+#contact .contacts h3 {
+	text-shadow: 0px 0px 2.9px #FFFFFF;
+	z-index: 10;
+	font-size: 1.5rem;
+	margin-bottom: 3px;
+	position: relative;
+	transition: 2s;
+}
+#contact .contacts h3::after {
+	text-shadow: 0px 0px 50px #FFFFFF;
+	font-size: 1.5rem;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+#contact .contacts h3.email::after {
+	content: '1anquetil.gabin@gmail.com';
+}
+#contact .contacts h3.num::after {
+	content: '07 49 55 08 13';
+}
+
+
+
+#contactCubeContainer {
+	position: absolute;
+	top: 50vh;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	width: 400px;
+	height: 400px;
+	perspective: 1000px;
+	transition: 5s;
+}
+#contactCubeContainer .cube {
+	width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+	will-change: transform;
+	animation: spinCube 19s infinite linear;
+}
+#contactCubeContainer .cube .face {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+}
+#contactCubeContainer .cube .top {
+	background: rgba(62, 62, 62, 0.153);
+	border: 1px solid white;
+	transform: rotateX(90deg) translateZ(150px);
+}
+#contactCubeContainer .cube .bottom {
+	background: rgba(62, 62, 62, 0.153);
+	border: 1px solid white;
+	transform: rotateX(-90deg) translateZ(150px);
+}
+#contactCubeContainer .cube .right {
+	background: rgba(62, 62, 62, 0.153);
+	border: 1px solid white;
+	transform: rotateY(90deg) translateZ(150px);
+}
+#contactCubeContainer .cube .left {
+	background: rgba(62, 62, 62, 0.153);
+	border: 1px solid white;
+	transform: rotateY(-90deg) translateZ(150px);
+}
+#contactCubeContainer .cube .front {
+	background: rgba(62, 62, 62, 0.153);
+	border: 1px solid white;
+	transform: rotateY(0deg) translateZ(150px);
+}
+#contactCubeContainer .cube .back {
+	background: rgba(62, 62, 62, 0.153);
+	border: 1px solid white;
+	transform: rotateY(-180deg) translateZ(150px);
+}
+@keyframes spinCube {
+	from {
+		transform: rotateX(0deg) rotateY(0deg);
+	}
+	to {
+		transform: rotateX(360deg) rotateY(360deg);
+	}
+}

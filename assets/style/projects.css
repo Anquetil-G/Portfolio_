@@ -1,0 +1,124 @@
+#projects {
+	position: relative;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(3, 100vw);
+	transform: translateX(0);
+	padding-bottom: 200vw;
+	will-change: transform;
+}
+
+.project {
+	display: grid;
+	grid-template-columns: 380px 1fr;
+	z-index: 10;
+}
+.text-part {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0 120px;
+}
+.text-part .frame {
+	border: 1px solid #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 30px;
+	gap: 20px;
+	position: relative;
+}
+.text-part .frame::before {
+	content: "Project";
+	position: absolute;
+	width: calc(100% + 2px - 7px);
+	height: 23px;
+	top: -23px;
+	left: -1px;
+	background: #fff;
+	color: #000;
+	align-items: center;
+	display: flex;
+	padding: 0 0 0 7px;
+	font-size: 0.9rem;
+}
+.text-part h2 {
+	width: 100%;
+	margin-bottom: 20px;
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+.text-part p {
+	line-height: 150%;
+	font-size: 1rem;
+}
+.text-part p a {
+	padding: 3px 6px;
+	transform: translateX(-6px);
+}
+.text-part .link-to-project {
+	width: 100%;
+}
+
+
+#projectCubeContainer {
+	position: absolute;
+	top: 50vh;
+	left: -190px;
+	transform: translateY(-50%) translateX(-50%);
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+}
+.cube {
+	width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+	will-change: transform;
+	animation: spinCube 15s infinite linear;
+}
+.cube .face {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+}
+.cube .top {
+	background: rgba(62, 62, 62, 0.153);
+	border: 1px solid white;
+	transform: rotateX(90deg) translateZ(100px);
+}
+.cube .bottom {
+	background: rgba(62, 62, 62, 0.153);
+	border: 1px solid white;
+	transform: rotateX(-90deg) translateZ(100px);
+}
+.cube .right {
+	background: rgba(62, 62, 62, 0.153);
+	border: 1px solid white;
+	transform: rotateY(90deg) translateZ(100px);
+}
+.cube .left {
+	background: rgba(62, 62, 62, 0.153);
+	border: 1px solid white;
+	transform: rotateY(-90deg) translateZ(100px);
+}
+.cube .front {
+	background: rgba(62, 62, 62, 0.153);
+	border: 1px solid white;
+	transform: rotateY(0deg) translateZ(100px);
+}
+.cube .back {
+	background: rgba(62, 62, 62, 0.153);
+	border: 1px solid white;
+	transform: rotateY(-180deg) translateZ(100px);
+}
+@keyframes spinCube {
+	from {
+		transform: rotateX(0deg) rotateY(0deg);
+	}
+	to {
+		transform: rotateX(360deg) rotateY(360deg);
+	}
+}
