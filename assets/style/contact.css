@@ -18,6 +18,10 @@
 	position: relative;
 	transition: 2s;
 }
+#contact .contacts h3.adress {
+	font-size: 1rem;
+	margin-top: 10px;
+}
 #contact .contacts h3::after {
 	text-shadow: 0px 0px 50px #FFFFFF;
 	font-size: 1.5rem;

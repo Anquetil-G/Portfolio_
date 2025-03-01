@@ -1,0 +1,51 @@
+#secondBackground {
+	display: flex;
+	min-height: 100vh;
+	min-width: 100vw;
+	position: fixed;
+	align-items: flex-end;
+	z-index: 0;
+}
+#secondBackground .lineColor {
+	width: 100%;
+}
+#secondBackground #lineColor1 {
+	background: #264653;
+}
+#secondBackground #lineColor2 {
+	background: #2A9D8F;
+}
+#secondBackground #lineColor3 {
+	background: #E9C46A;
+}
+#secondBackground #lineColor4 {
+	background: #F4A261;
+}
+#secondBackground #lineColor5 {
+	background: #E76F51;
+}
+
+.lineColor1Anim {
+	animation: lineColorAnim 1.6s ease-in forwards;
+}
+.lineColor2Anim {
+  animation: lineColorAnim 1.9s ease-in forwards;
+}
+.lineColor3Anim {
+  animation: lineColorAnim 1.4s ease-in forwards;
+}
+.lineColor4Anim {
+  animation: lineColorAnim 1.7s ease-in forwards;
+}
+.lineColor5Anim {
+  animation: lineColorAnim 1.3s ease-in forwards;
+}
+
+@keyframes lineColorAnim {
+	0% {
+		height: 0;
+	}
+	100% {
+    height: 100vh;
+  }
+}

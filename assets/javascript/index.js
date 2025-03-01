@@ -1,5 +1,6 @@
 let mouseX = 0, mouseY = 0;
 let cursorX = 0, cursorY = 0;
+let loaderIsEnd = false;
 
 const lenis = new Lenis({
 		duration: 0.8, // Ajustez la durée (plus grand = plus lent)
@@ -21,6 +22,11 @@ lenis.on('scroll', ({ scroll }) => {
 		projects.style.transform = `translate(-${scroll - window.innerHeight}px, ${scroll - window.innerHeight}px)`
 	};
 	projectCubeContainer.style.left = `${190 + (scroll - window.innerHeight)}px`
+	if (window.scrollY + window.innerHeight >= document.body.offsetHeight - 100) {
+		if (loaderIsEnd) {
+			transformPage();
+		};
+  };
 });
 
 const observer = new IntersectionObserver(([entry]) => {
@@ -189,8 +195,8 @@ const hoverElements = () => {
 		});
 		element.addEventListener("mouseleave", () => {
 			transitionText(element.getAttribute('default-text'), element, 680);
-			customCursor.style.width = "12px"
-			customCursor.style.height = "12px"
+			customCursor.style.width = "14px"
+			customCursor.style.height = "14px"
 		});
 	};
 	setInterval(() => {
@@ -216,11 +222,32 @@ const loadingPage = () => {
 			setTimeout(() => {
 				loaderPage.style.display = 'none';
 				content.style.display = 'block';
+				loaderIsEnd = true;
 				console.log("stop");
 			}, 20 * 25 + 500);
 		}, 450);
   }, 4000);
 };
+
+const transformPage = () => {
+	lineColor1.classList.add("lineColor1Anim");
+	lineColor2.classList.add("lineColor2Anim");
+	lineColor3.classList.add("lineColor3Anim");
+	lineColor4.classList.add("lineColor4Anim");
+	lineColor5.classList.add("lineColor5Anim");
+	const inverse = document.querySelectorAll(".inverse");
+	inverse.forEach(element => {
+		element.style.mixBlendMode = 'difference';
+		element.style.color = '#ffd6f6';
+	});
+	heroHeaderImg.src = "./assets/img/hero-header2.jpg";
+	const imgBlocks = document.querySelectorAll("#heroHeader .image .img-blocks .block");
+	imgBlocks.forEach(imgBlock => {
+		imgBlock.style.background = 'rgb(233 204 218 / 87%)';
+	});
+	const imgOverlay = document.querySelector("#heroHeader .image .img-overlay");
+	imgOverlay.style.background = 'rgb(20 0 11)';
+}
 
 window.addEventListener("load", () => {
 	hoverElements();
@@ -228,14 +255,8 @@ window.addEventListener("load", () => {
 	loadingPage();
 });
 
-
-
-
-
 const blocks = document.querySelectorAll("#heroHeader .image .img-blocks .block")
 const resetDuration = 375
-
-
 blocks.forEach(block => {
 	let timeoutId;
 

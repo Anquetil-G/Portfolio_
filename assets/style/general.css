@@ -52,6 +52,10 @@ a {
 
 /* ----------------------------- General params ----------------------------- */
 
+/* .inverse {
+	mix-blend-mode: difference;
+	color: #ffd6f6;
+} */
 body {
 	overflow: hidden;
 	color: #fff;
@@ -60,6 +64,9 @@ body {
 	font-size: 0.8rem;
 	cursor: default;
 }
+/* * {
+	mix-blend-mode: difference;
+} */
 *::-moz-selection {
 	background-color:#fff;
 	color: #000;

@@ -7,29 +7,27 @@
 	padding-bottom: 200vw;
 	will-change: transform;
 }
-
-.project {
+#projects .project {
 	display: grid;
 	grid-template-columns: 380px 1fr;
 	z-index: 10;
 }
-.text-part {
+#projects .text-part {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 0 120px;
 }
-.text-part .frame {
+#projects .text-part .frame {
 	border: 1px solid #fff;
 	display: flex;
-	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	padding: 30px;
 	gap: 20px;
 	position: relative;
 }
-.text-part .frame::before {
+#projects .text-part .frame::before {
 	content: "Project";
 	position: absolute;
 	width: calc(100% + 2px - 7px);
@@ -43,22 +41,26 @@
 	padding: 0 0 0 7px;
 	font-size: 0.9rem;
 }
-.text-part h2 {
+#projects .text-part h2 {
 	width: 100%;
 	margin-bottom: 20px;
 	font-size: 2rem;
 	text-transform: uppercase;
 }
-.text-part p {
+#projects .text-part p {
 	line-height: 150%;
 	font-size: 1rem;
 }
-.text-part p a {
+#projects .text-part p a {
 	padding: 3px 6px;
 	transform: translateX(-6px);
 }
-.text-part .link-to-project {
-	width: 100%;
+#projects .text-part .link-to-project {
+	width: 170px;
+}
+#projects .text-part .links {
+	display: flex;
+	gap: 20px;
 }
 
 

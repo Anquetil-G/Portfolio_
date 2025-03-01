@@ -8,6 +8,13 @@
 </head>
 <body>
 	<div class="background noise finisher-header"></div>
+	<div id="secondBackground">
+		<div class="lineColor" id="lineColor1"></div>
+		<div class="lineColor" id="lineColor2"></div>
+		<div class="lineColor" id="lineColor3"></div>
+		<div class="lineColor" id="lineColor4"></div>
+		<div class="lineColor" id="lineColor5"></div>
+	</div>
 	<section id="loaderPage">
 		<div class="background-lines">
 			<div class="line line1" id="bgLoaderPage1"></div>
@@ -37,7 +44,7 @@
 		</div>
 	</section>
 	<header id="heroHeader">
-		<nav>
+		<nav class="inverse">
 			<p class="default-hover" hover-text="Gabin.A" default-text="Anquetil.G">Anquetil.G</p>
 			<ul>
 				<li><a id="goToProjectsButton" class="default-hover" hover-text="Pr(j3cts" default-text="Projects">Projects</a></li>
@@ -47,7 +54,7 @@
 		</nav>
 		<div class="image">
 			<div class="img">
-				<img src="./assets/img/hero-header2.jpg" alt="illu">
+				<img id="heroHeaderImg" src="./assets/img/hero-header.jpg" alt="illu">
 			</div>
 			<div class="img-overlay"></div>
 			<div class="img-blocks">
@@ -528,86 +535,97 @@
 				<div class="block"></div>
 			</div>
 		</div>
-		<div class="call-to-scroll"><p>(<span id="callToScroll" hover-text="scr/ll" default-text="scroll">scroll</span>)</p></div>
+		<div class="call-to-scroll inverse"><p>(<span id="callToScroll" hover-text="scr/ll" default-text="scroll">scroll</span>)</p></div>
 	</header>
 	<div id="content">
-		<div class="custom-cursor-container">
-			<div id="customCursor"></div>
+		<div class="inverse">
+			<div class="custom-cursor-container">
+				<div id="customCursor"></div>
+			</div>
+			<section id="projects">
+				<div id="projectCubeContainer">
+					<div class="cube">
+						<div class="face front"></div>
+						<div class="face back"></div>
+						<div class="face right"></div>
+						<div class="face left"></div>
+						<div class="face top"></div>
+						<div class="face bottom"></div>
+					</div>
+				</div>
+				<div class="project project1">
+					<div class="cube-part"></div>
+					<div class="text-part">
+						<div class="frame">
+							<h2 class="reveal-text reveal-text-project1">JustTalk</h2>
+							<p class="reveal-text reveal-text-project1">JustTalk is a chat application with only one chat in which you can make small talk. This project was developed entirely by me in HTML/CSS/JS for the frontend and in NodeJS with MongoDB for the backend. The goal of this project was to train myself to make a complete backend. PS: If you go to the site, the first loading may be long due to the DB.</p>
+							<div class="links reveal-text">
+								<p class="link-to-project reveal-text-project1"><a href="https://anquetil-g.github.io/JustTalk-Front/" target="_blank" class="default-hover" hover-text="Sea th3 pr)ject" default-text="See the project">See the project</a></p>
+								<p class="link-to-project reveal-text-project1"><a href="https://anquetil-g.github.io/JustTalk-Front/" target="_blank" class="default-hover" hover-text="G1thub" default-text="G1thub">Github</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="project project2">
+					<div class="cube-part"></div>
+					<div class="text-part reveal-text">
+						<div class="frame">
+							<h2>ToDoGame</h2>
+							<p>This app is a mix between a todolist and a collection game. The goal is to complete tasks to collect coins and experience levels. These coins can be used to buy items that will allow you to put creatures in your collection. This app is made in HTML/CSS/JS, the database in NodeJS with MongoDB. PS: If you go to the site, the first loading may be long due to the DB.</p>
+							<div class="links reveal-text">
+								<p class="link-to-project reveal-text-project1"><a href="https://anquetil-g.github.io/TodoGame-Frontend/" target="_blank" class="default-hover" hover-text="Sea th3 pr)ject" default-text="See the project">See the project</a></p>
+								<p class="link-to-project reveal-text-project1"><a href="https://anquetil-g.github.io/JustTalk-Front/" target="_blank" class="default-hover" hover-text="G1thub" default-text="G1thub">Github</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="project project3">
+					<div class="cube-part"></div>
+					<div class="text-part reveal-text">
+						<div class="frame">
+							<h2>Project - Cinema App</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in sagittis metus. Duis fermentum, lacus et fermentum ultrices, urna nunc mattis ipsum, non fermentum neque dolor a est. Integer semper, risus in consectetur fermentum, mauris justo vulputate neque, vel consectetur neque ligula nec ex. Nulla facilisi. Sed vel quam eget urna rutrum gravida. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ea incidunt iusto iste consequuntur.</p>
+							<div class="links reveal-text">
+								<p class="link-to-project reveal-text-project1"><a href="https://anquetil-g.github.io/JustTalk-Front/" target="_blank" class="default-hover" hover-text="Sea th3 pr)ject" default-text="See the project">See the project</a></p>
+								<p class="link-to-project reveal-text-project1"><a href="https://anquetil-g.github.io/JustTalk-Front/" target="_blank" class="default-hover" hover-text="G1thub" default-text="G1thub">Github</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="about">
+				<div class="frame">
+					<p class="reveal-text reveal-text-about">Currently in the first year at Les Fontenelles high school in Louviers, I am looking for an internship from (date). This would allow me to have a second professional experience in the world of web development, the first being in my secondary school internship at Océan Communication. I could make myself useful within your company, I already have skills in the web creation and I am convinced that this internship will expand my knowledge in many areas. I look forward to meeting you soon to share my motivation with you. In the meantime, best regards.</p>
+					<div class="skills">
+						<h2 class="reveal-text reveal-text-about">Compétences</h2>
+						<ul>
+							<li><p class="reveal-text reveal-text-about">HTML/CSS</p></li>
+							<li><p class="reveal-text reveal-text-about">Javascript</p></li>
+							<li><p class="reveal-text reveal-text-about">React</p></li>
+							<li><p class="reveal-text reveal-text-about">NodeJS</p></li>
+							<li><p class="reveal-text reveal-text-about">MongoDB</p></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section id="contact">
+				<div class="contacts">
+					<h3 class="reveal-text reveal-text-contact email">1anquetil.gabin@gmail.com</h3>
+					<h3 class="reveal-text reveal-text-contact num">07 49 55 08 13</h3>
+					<h3 class="reveal-text reveal-text-adress adress">St Étienne du Vauvray, 5 Allée des Écureuils</h3>
+				</div>
+				<div id="contactCubeContainer" class="">
+					<div class="cube">
+						<div class="face front"></div>
+						<div class="face back"></div>
+						<div class="face right"></div>
+						<div class="face left"></div>
+						<div class="face top"></div>
+						<div class="face bottom"></div>
+					</div>
+				</div>
+			</section>
 		</div>
-		<section id="projects">
-			<div id="projectCubeContainer">
-				<div class="cube">
-					<div class="face front"></div>
-          <div class="face back"></div>
-          <div class="face right"></div>
-          <div class="face left"></div>
-          <div class="face top"></div>
-          <div class="face bottom"></div>
-				</div>
-			</div>
-			<div class="project project1">
-				<div class="cube-part"></div>
-				<div class="text-part">
-					<div class="frame">
-						<h2 class="reveal-text reveal-text-project1">JustTalk</h2>
-						<p class="reveal-text reveal-text-project1">JustTalk is a chat application with only one chat in which you can talk about anything and everything. This project was developed entirely by me in HTML/CSS/JS for the frontend and in NodeJS with MongoDB for the backend. The goal of this project was to train myself to make a complete backend. PS: If you go to the site, the first loading may be long due to the DB.</p>
-						<p class="link-to-project reveal-text reveal-text-project1"><a href="https://anquetil-g.github.io/JustTalk-Front/" target="_blank" class="default-hover" hover-text="Sea th3 pr)ject" default-text="See the project">See the project</a></p>
-					</div>
-				</div>
-      </div>
-			<div class="project project2">
-				<div class="cube-part"></div>
-				<div class="text-part reveal-text">
-					<div class="frame">
-						<h2>Project - ToDoGame</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in sagittis metus. Duis fermentum, lacus et fermentum ultrices, urna nunc mattis ipsum, non fermentum neque dolor a est. Integer semper, risus in consectetur fermentum, mauris justo vulputate neque, vel consectetur neque ligula nec ex. Nulla facilisi. Sed vel quam eget urna rutrum gravida. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ea incidunt iusto iste consequuntur.</p>
-						<p class="link-to-project"><a href="" target="_blank" class="default-hover" hover-text="Sea th3 pr)ject" default-text="See the project">See the project</a></p>
-					</div>
-				</div>
-      </div>
-			<div class="project project3">
-				<div class="cube-part"></div>
-				<div class="text-part reveal-text">
-					<div class="frame">
-						<h2>Project - Cinema App</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in sagittis metus. Duis fermentum, lacus et fermentum ultrices, urna nunc mattis ipsum, non fermentum neque dolor a est. Integer semper, risus in consectetur fermentum, mauris justo vulputate neque, vel consectetur neque ligula nec ex. Nulla facilisi. Sed vel quam eget urna rutrum gravida. Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ea incidunt iusto iste consequuntur.</p>
-						<p class="link-to-project"><a href="" target="_blank" class="default-hover" hover-text="Sea th3 pr)ject" default-text="See the project">See the project</a></p>
-					</div>
-				</div>
-      </div>
-		</section>
-		<section id="about">
-			<div class="frame">
-				<p class="reveal-text reveal-text-about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, quam? Tenetur accusamus et perferendis aperiam repellat. Eligendi nostrum officiis deserunt delectus? Maxime dolorem dicta odio error, velit nobis aliquid maiores natus libero et minima vitae quasi corrupti. Molestias nihil delectus ipsum ipsa earum. Consequatur aliquam voluptates doloribus dicta soluta quo! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate facere sunt iste cumque accusamus ut quisquam tempore beatae nostrum id iure et ducimus, eligendi deserunt neque commodi dignissimos odit aut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, eaque. <br><br>
-				Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic qui explicabo, necessitatibus perferendis voluptatem autem dicta magnam quos quasi incidunt quaerat fugiat quam dolores earum non quidem eius eveniet doloribus, vero provident! Doloremque, nisi? Non necessitatibus qui animi accusantium voluptate?</p>
-				<div class="skills">
-					<h2 class="reveal-text reveal-text-about">Compétences</h2>
-					<ul>
-						<li><p class="reveal-text reveal-text-about">HTML/CSS</p></li>
-						<li><p class="reveal-text reveal-text-about">Javascript</p></li>
-						<li><p class="reveal-text reveal-text-about">React</p></li>
-						<li><p class="reveal-text reveal-text-about">NodeJS</p></li>
-						<li><p class="reveal-text reveal-text-about">MongoDB</p></li>
-					</ul>
-				</div>
-			</div>
-		</section>
-		<section id="contact">
-			<div class="contacts">
-				<h3 class="reveal-text reveal-text-contact email">1anquetil.gabin@gmail.com</h3>
-				<h3 class="reveal-text reveal-text-contact num">07 49 55 08 13</h3>
-			</div>
-			<div id="contactCubeContainer" class="reveal-text reveal-text-contact">
-				<div class="cube">
-					<div class="face front"></div>
-          <div class="face back"></div>
-          <div class="face right"></div>
-          <div class="face left"></div>
-          <div class="face top"></div>
-          <div class="face bottom"></div>
-				</div>
-			</div>
-		</section>
 	</div>
 	<script src="./assets/javascript/lenis.min.js"></script>
 	<script src="./assets/javascript/finisher-header.es5.min.js" type="text/javascript"></script>
