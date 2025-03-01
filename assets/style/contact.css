@@ -31,10 +31,10 @@
 	transform: translate(-50%, -50%);
 }
 #contact .contacts h3.email::after {
-	content: '1anquetil.gabin@gmail.com';
+	content: 'notmyemail@gmail.com';
 }
 #contact .contacts h3.num::after {
-	content: '07 49 55 08 13';
+	content: '09 01 02 03 04';
 }
 
 
