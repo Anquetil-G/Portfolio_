@@ -22,20 +22,6 @@
 	font-size: 1rem;
 	margin-top: 10px;
 }
-#contact .contacts h3::after {
-	text-shadow: 0px 0px 50px #FFFFFF;
-	font-size: 1.5rem;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-}
-#contact .contacts h3.email::after {
-	content: '1anquetil.gabin@gmail.com';
-}
-#contact .contacts h3.num::after {
-	content: '07 49 55 08 13';
-}
 
 
 
