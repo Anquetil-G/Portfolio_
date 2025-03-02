@@ -3,9 +3,11 @@ let cursorX = 0, cursorY = 0;
 let loaderIsEnd = false;
 
 const lenis = new Lenis({
-		duration: 0.8, // Ajustez la durée (plus grand = plus lent)
-		easing: (t) => t * (2 - t),
-    smooth: true,
+		// duration: 0.8, // Ajustez la durée (plus grand = plus lent)
+		// easing: (t) => t * (2 - t),
+		// easing: (t) => t * (2 - t),
+    smooth: false,
+		smoothTouch: false,
 });
 function raf(time) {
     lenis.raf(time);
@@ -29,24 +31,17 @@ lenis.on('scroll', ({ scroll }) => {
   };
 });
 
-const observer = new IntersectionObserver(([entry]) => {
-  if (entry.isIntersecting) {
-		entry.target.style.opacity = "1";
-	}
-});
-
-const textReveal = () => {
-	lenis.on('scroll', () => {
-		const revealTexts = document.getElementsByClassName("reveal-text");
-		for (const revealText of revealTexts) {
-			observer.observe(revealText);
-		};
-	});
-};
-textReveal();
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = "1";
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll(".reveal-text").forEach(el => observer.observe(el));
 
 new FinisherHeader({
-  "count": 40,
+  "count": 30,
   "size": {
     "min": 1003,
     "max": 1500,
@@ -136,12 +131,10 @@ window.addEventListener("mousemove", (e) => {
 });
 
 const animateCursor = () => {
-	cursorX += (mouseX - cursorX) * 0.085;
-	cursorY += (mouseY - cursorY) * 0.085;
-
-	customCursor.style.transform = `translate(calc(${cursorX}px - 50%), calc(${cursorY}px - 50%))`;
-
-	requestAnimationFrame(animateCursor);
+  cursorX += (mouseX - cursorX) * 0.085;
+  cursorY += (mouseY - cursorY) * 0.085;
+  customCursor.style.transform = `translate(calc(${cursorX}px - 50%), calc(${cursorY}px - 50%))`;
+  requestAnimationFrame(animateCursor);
 };
 
 const transitionText = (targetString, element, time) => {
@@ -188,15 +181,15 @@ const transitionText = (targetString, element, time) => {
 const hoverElements = () => {
 	const elements = document.getElementsByClassName("default-hover");
 	for (const element of elements) {
+		let hoverTimeout;
 		element.addEventListener("mouseover", () => {
+			clearTimeout(hoverTimeout);
 			transitionText(element.getAttribute('hover-text'), element, 680);
-			customCursor.style.width = "4px"
-			customCursor.style.height = "4px"
 		});
 		element.addEventListener("mouseleave", () => {
-			transitionText(element.getAttribute('default-text'), element, 680);
-			customCursor.style.width = "14px"
-			customCursor.style.height = "14px"
+			hoverTimeout = setTimeout(() => {
+				transitionText(element.getAttribute('default-text'), element, 680);
+			}, 200);
 		});
 	};
 	setInterval(() => {

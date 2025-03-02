@@ -8,6 +8,8 @@
 }
 #secondBackground .lineColor {
 	width: 100%;
+	height: 100vh;
+	transform: scale(1, 0);
 }
 #secondBackground #lineColor1 {
 	background: #264653;
@@ -43,9 +45,9 @@
 
 @keyframes lineColorAnim {
 	0% {
-		height: 0;
+		transform: translateY(100vh);
 	}
 	100% {
-    height: 100vh;
+    transform: translateY(0);
   }
 }

@@ -1,30 +1,33 @@
 .background {
-	position: fixed;
-	width: 100vw;
-	height: 100vh;
-	background: #151515;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #151515;
 }
+
 .noise {
   --lines: 0.0001px;
-  
+  will-change: transform;
+  transform: translateZ(0);
   mask-image: repeating-radial-gradient(
     circle at center,
-    #000,                    /* Première couleur (noir) */
-    var(--lines),            /* Espacement entre les lignes */
-    #000,                    /* Même couleur (noir) */
-    0,                       /* Indication de transition */
-    #0000,                   /* Partie transparente du dégradé */
-    calc(var(--lines) * 2),  /* Distance de transition pour la transparence */
-    #0000 0                  /* Arrêt de la transition de transparence */
+    #000,
+    var(--lines),
+    #000,
+    0,
+    #0000,
+    calc(var(--lines) * 2),
+    #0000 0
   );
-
-	animation: liner var(--hour) linear infinite;
+  animation: liner var(--hour) linear infinite;
 }
+
 @property --lines {
   syntax: "<length>";
   inherits: false;
   initial-value: 0.00010px;
 }
+
 @keyframes liner {
   50% {
     --lines: 0.00012px;
